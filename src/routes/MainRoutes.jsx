@@ -5,6 +5,7 @@ import HomePage from "../pages/HomePage";
 import AddPodsPage from "../pages/AddPodsPage";
 import EditPodsPage from "../pages/EditPodsPage";
 import ProductsPodsPage from "../pages/ProductsPodsPage";
+import OxPage from "../pages/OxPage";
 
 const MainRoutes = () => {
   return (
@@ -12,6 +13,7 @@ const MainRoutes = () => {
       <Route element={<MainLayouts />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductsPodsPage />} />
+        <Route path="/ox" element={<OxPage />} />
         <Route path="/add" element={<AddPodsPage />} />
         <Route path="/edit" element={<EditPodsPage />} />
       </Route>

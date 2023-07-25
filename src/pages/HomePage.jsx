@@ -85,7 +85,7 @@ const HomePage = () => {
             color: "white",
           }}>
           <Button
-            onClick={() => navigate("/products")}
+            onClick={() => navigate("/ox")}
             sx={{ width: "200px", marginTop: "10px", color: "white" }}>
             Learn More >
           </Button>
