@@ -30,6 +30,8 @@ export default function AddPodsPage() {
     taste: "",
     description: "",
     image: "",
+    imageBack: "",
+    price: "",
   });
 
   function handleChange(e) {
@@ -44,7 +46,9 @@ export default function AddPodsPage() {
       !formValue.title.trim() ||
       !formValue.taste.trim() ||
       !formValue.description.trim() ||
-      !formValue.image.trim()
+      !formValue.image.trim() ||
+      !formValue.imageBack.trim() ||
+      !formValue.price.trim()
     ) {
       return;
     }
@@ -55,6 +59,8 @@ export default function AddPodsPage() {
       taste: "",
       description: "",
       image: "",
+      imageBack: "",
+      price: "",
     });
   };
 
@@ -93,6 +99,15 @@ export default function AddPodsPage() {
               margin="normal"
               required
               fullWidth
+              name="price"
+              label="price"
+              value={formValue.price}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
               name="taste"
               label="Taste"
               value={formValue.taste}
@@ -114,6 +129,15 @@ export default function AddPodsPage() {
               name="image"
               label="Image"
               value={formValue.image}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="imageBack"
+              label="ImageBack"
+              value={formValue.imageBack}
               onChange={handleChange}
             />
 

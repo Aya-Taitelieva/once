@@ -77,7 +77,44 @@ const MainContext = ({ children }) => {
       console.log(e);
     }
   }
-  const value = { addPods, setPods, pods: state.pods, getPods };
+
+  async function deletePods(id) {
+    try {
+      await axios.delete(`${API}/${id}`);
+      getPods();
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  async function getOnePods(id) {
+    try {
+      const { data } = await axios.get(`${API}/${id}`);
+      dispatch({
+        type: ACTIONS.pods,
+        payload: data,
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  async function editPods(id, newData) {
+    try {
+      await axios.patch(`${API}/${id}`, newData);
+      getPods();
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  const value = {
+    addPods,
+    setPods,
+    pods: state.pods,
+    getPods,
+    deletePods,
+    getOnePods,
+    editPods,
+  };
   return <mainContext.Provider value={value}>{children}</mainContext.Provider>;
 };
 

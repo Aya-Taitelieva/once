@@ -13,7 +13,7 @@ const MainRoutes = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductsPodsPage />} />
         <Route path="/add" element={<AddPodsPage />} />
-        <Route path="/edit" element={<EditPodsPage />} />
+        <Route path="/edit/:id" element={<EditPodsPage />} />
       </Route>
     </Routes>
   );
