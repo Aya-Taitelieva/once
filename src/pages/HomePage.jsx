@@ -61,7 +61,7 @@ const HomePage = () => {
           <h5>ELFBAR Pi7000 </h5>
           <h1>Daily Oasis in Your Palm</h1>
           <Button
-            onClick={() => navigate("/products")}
+            onClick={() => navigate("/elf")}
             sx={{
               width: "200px",
               marginTop: "10px",
