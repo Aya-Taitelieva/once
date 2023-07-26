@@ -1,6 +1,9 @@
+import { Button } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const OxPage = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div
@@ -16,8 +19,12 @@ const OxPage = () => {
             marginTop: "30px",
             color: "white",
           }}>
-          <h3 style={{ fontWeight: "700" }}>OXBAR G4000</h3>
-          <h2 style={{ fontWeight: "900" }}>Your Ultimate Travel Companion</h2>
+          <h3 className="animation-h3" style={{ fontWeight: "700" }}>
+            OXBAR G4000
+          </h3>
+          <h2 className="animation-h2" style={{ fontWeight: "900" }}>
+            Your Ultimate Travel Companion
+          </h2>
         </div>
         <img
           style={{ width: "100%" }}
@@ -25,8 +32,10 @@ const OxPage = () => {
         />
       </div>
       <div style={{ margin: "90px auto", width: "70%", textAlign: "center" }}>
-        <h2 style={{ color: "#019aff" }}>OXBAR G4000</h2>
-        <span>
+        <h2 className="animation-h2" style={{ color: "#019aff" }}>
+          OXBAR G4000
+        </h2>
+        <span className="animation-span">
           OXBAR G4000 boasts a powerful 950mAh battery, offering an extended
           vaping experience without recharging. Approximately 4000 puffs let
           users enjoy it during the whole week. With its upgraded mesh coil and
@@ -48,12 +57,14 @@ const OxPage = () => {
             width: "400px",
             color: "white",
           }}>
-          <h2>Exceptional Battery Life</h2>
-          <span>
+          <h2 className="animation-h2">Exceptional Battery Life</h2>
+          <span className="animation-span">
             Equipped with a powerful 950mAh built-in battery, it offers an
             extended vaping experience during the whole week.
           </span>
-          <h2 style={{ color: "#019aff" }}>950mAh</h2>
+          <h2 className="animation-h2" style={{ color: "#019aff" }}>
+            950mAh
+          </h2>
         </div>
       </div>
       <div style={{ position: "relative" }}>
@@ -64,19 +75,51 @@ const OxPage = () => {
         <div
           style={{
             position: "absolute",
-            bottom: "150px",
+            bottom: "800px",
             left: "700px",
             width: "400px",
             color: "white",
           }}>
-          <h2>Versatile Carry Option</h2>
-          <span>
+          <h2 className="animation-h2">Versatile Carry Option</h2>
+          <span className="animation-span">
             Designed with a built-in lanyard hole, allows you to effortlessly
             hang it around your neck, showcasing a trendy, fashionable, and
             hands-free carrying style
           </span>
         </div>
-        <div></div>
+        <div style={{ position: "relative" }}>
+          <img
+            style={{ width: "100%" }}
+            src="https://cdn.shopify.com/s/files/1/0584/6709/0582/files/OXBAR_-G4000_-2023_09.png?v=1685672997"
+          />
+          <div
+            style={{
+              position: "absolute",
+              bottom: "400px",
+              left: "100px",
+              width: "400px",
+              color: "white",
+            }}>
+            <h2 className="animation-h2">Food-Grade Materials Drip Tip</h2>
+            <span className="animation-span">
+              We prioritize your safety and satisfaction. It guarantees safety,
+              durability, and high-temperature resistance, ensuring a worry-free
+              vaping experience with every puff.
+            </span>
+          </div>
+          <Button
+            onClick={() => navigate("/products")}
+            variant="outlined"
+            size="large"
+            sx={{
+              position: "absolute",
+              right: "100px",
+              top: "70px",
+              color: "#019aff",
+            }}>
+            Go to Shop!
+          </Button>
+        </div>
       </div>
     </div>
   );
