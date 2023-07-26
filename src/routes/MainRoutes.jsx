@@ -15,7 +15,7 @@ const MainRoutes = () => {
         <Route path="/products" element={<ProductsPodsPage />} />
         <Route path="/ox" element={<OxPage />} />
         <Route path="/add" element={<AddPodsPage />} />
-        <Route path="/edit" element={<EditPodsPage />} />
+        <Route path="/edit/:id" element={<EditPodsPage />} />
       </Route>
     </Routes>
   );
