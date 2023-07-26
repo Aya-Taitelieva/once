@@ -17,7 +17,7 @@ const HomePage = () => {
       >
         <div style={{ marginLeft: "15px" }}>
           <span style={{ fontSize: "25px" }}>World's Best New Comer!</span>
-          <h1>WAKA Shines at the Vapouround Global Awards 2023</h1>
+          <h1> Shines at the Vapouround Global Awards 2023</h1>
         </div>
         <img
           style={{ width: "55vw" }}
