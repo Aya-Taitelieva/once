@@ -36,10 +36,10 @@ const HomePage = () => {
           src="https://www.wakavaping.com/cdn/shop/files/PC_2x_bed97bcf-6f7f-409e-829b-b3086eabfb95.png?v=1679477483&width=1280"
         />
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <h2>Wanna Buy WAKA Vapes Online?</h2>
+          <h2>Wanna know more about Waka?</h2>
           <span>Visit online shops and get your favorite WAKA</span>
           <Button
-            onClick={() => navigate("/products")}
+            onClick={() => navigate("/waka")}
             sx={{ width: "100px", marginTop: "10px" }}
             variant="outlined">
             Visit
