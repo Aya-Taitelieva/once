@@ -6,6 +6,12 @@ function ElfPage() {
   const navigate = useNavigate();
   return (
     <div>
+      <div>
+        <h2 style={{ textAlign: "center" }}>
+          WARNING: This product contains nicotine. Nicotine is an addictive
+          chemical.
+        </h2>
+      </div>
       <Carousel>
         <Carousel.Item>
           <img
