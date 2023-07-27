@@ -8,13 +8,18 @@ const HomePage = () => {
   const navigate = useNavigate();
   return (
     <div>
+      <div>
+        <h2 style={{ textAlign: "center" }}>
+          WARNING: This product contains nicotine. Nicotine is an addictive
+          chemical.
+        </h2>
+      </div>
       <div
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-        }}
-      >
+        }}>
         <div style={{ marginLeft: "15px" }}>
           <span style={{ fontSize: "25px" }}>World's Best New Comer!</span>
           <h1> Shines at the Vapouround Global Awards 2023</h1>
@@ -31,20 +36,18 @@ const HomePage = () => {
           alignItems: "center",
           gap: "20px",
           margin: "50px auto",
-        }}
-      >
+        }}>
         <img
           style={{ width: "50vw" }}
           src="https://www.wakavaping.com/cdn/shop/files/PC_2x_bed97bcf-6f7f-409e-829b-b3086eabfb95.png?v=1679477483&width=1280"
         />
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <h2>Wanna Buy WAKA Vapes Online?</h2>
+          <h2>Wanna know more about Waka?</h2>
           <span>Visit online shops and get your favorite WAKA</span>
           <Button
-            onClick={() => navigate("/products")}
+            onClick={() => navigate("/waka")}
             sx={{ width: "100px", marginTop: "10px" }}
-            variant="outlined"
-          >
+            variant="outlined">
             Visit
           </Button>
         </div>
@@ -52,8 +55,7 @@ const HomePage = () => {
       <div style={{ position: "relative" }}>
         <img
           style={{ width: "100%" }}
-          src="https://dbh4s5ja0maaw.cloudfront.net/uploads/upload/upload/202306211601157103_5120X1560.jpg"
-        ></img>
+          src="https://dbh4s5ja0maaw.cloudfront.net/uploads/upload/upload/202306211601157103_5120X1560.jpg"></img>
         <div
           style={{
             position: "absolute",
@@ -61,18 +63,16 @@ const HomePage = () => {
             left: "200px",
             zIndex: 1,
             color: "white",
-          }}
-        >
+          }}>
           <h5>ELFBAR Pi7000 </h5>
           <h1>Daily Oasis in Your Palm</h1>
           <Button
-            onClick={() => navigate("/products")}
+            onClick={() => navigate("/elf")}
             sx={{
               width: "200px",
               marginTop: "10px",
               color: "white",
-            }}
-          >
+            }}>
             Learn More
           </Button>
         </div>
@@ -89,12 +89,16 @@ const HomePage = () => {
             left: "200px",
             zIndex: 1,
             color: "white",
-          }}
-        >
+          }}>
           <Button
+
             onClick={() => navigate("/products")}
             sx={{ width: "200px", marginTop: "10px", color: "white" }}
           >
+
+            onClick={() => navigate("/ox")}
+            sx={{ width: "200px", marginTop: "10px", color: "white" }}>
+
             Learn More
           </Button>
         </div>
