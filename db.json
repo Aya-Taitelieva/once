@@ -1,7 +1,4 @@
 {
-
-  "products": []
-
   "products": [
     {
       "title": "Waka",
@@ -48,9 +45,8 @@
       "price": "15",
 
       "id": 5
-
     },
-   
+
     {
       "title": "Waka",
       "taste": "Lychee Burst",
@@ -86,8 +82,6 @@
       "imageBack": "https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/flavor2.jpg",
       "price": "11",
       "id": 9
-
-
     },
     {
       "title": "Elf Bar",
@@ -99,7 +93,7 @@
 
       "id": 10
     },
-    
+
     {
       "title": "Elf Bar",
       "taste": "Super Berry",
@@ -109,7 +103,7 @@
       "price": "11",
       "id": 11
     },
- 
+
     {
       "title": "Elf Bar",
       "taste": "Rainbow Cloudz",
@@ -119,7 +113,7 @@
       "price": "11",
       "id": 12
     },
-    
+
     {
       "title": "Elf Bar",
       "taste": "Watermelon Ice",
@@ -182,7 +176,6 @@
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/StrawberryKiwi_4a12d8eb-e6c6-475d-b566-e5551c972517.png?v=1685676238",
       "price": "13",
       "id": 19
-
     },
     {
       "title": "Ox Bar",
@@ -210,7 +203,6 @@
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/KiwiPassionGuava_3e157e4d-58b1-43a3-b873-d6b7e3506984.png?v=1685676238",
       "price": "13",
       "id": 22
-
     },
     {
       "title": "Ox Bar",
@@ -220,7 +212,6 @@
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/DoubleDoubleCoffee.png?v=1685676238",
       "price": "13",
       "id": 23
-
     },
     {
       "title": "Ox Bar",
@@ -230,8 +221,6 @@
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/RootBeer.png?v=1685676238",
       "price": "13",
       "id": 24
-
     }
   ]
-
 }
