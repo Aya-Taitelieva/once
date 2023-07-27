@@ -7,4 +7,4 @@ export const ACTIONS = {
   pageTotalCount: "pageTotalCount",
 };
 
-export const LIMIT = 4;
+export const LIMIT = 6;
