@@ -16,15 +16,20 @@ export function useAuthContext() {
 }
 
 const AuthContext = ({ children }) => {
-	const [user, setUser] = useState(true);
+	const [user, setUser] = useState(null);
+	const [error, setError] = useState(null);
 
 	async function register(email, password, displayName, photoURL) {
+        if (!displayName) {
+            setError('Please, enter your name')
+            return
+        }
 		try {
-			console.log(displayName, photoURL);
 			await createUserWithEmailAndPassword(auth, email, password);
 			await updateProfile(auth.currentUser, { displayName, photoURL });
 		} catch (e) {
 			console.log(e);
+            e.message.includes('password')? setError('Please, enter valid password') : setError('Please, enter valid e-mail') 
 		}
 	}
 
@@ -33,6 +38,7 @@ const AuthContext = ({ children }) => {
 			await signInWithEmailAndPassword(auth, email, password);
 		} catch (e) {
 			console.log(e);
+            e.message.includes('password')? setError('Please, enter valid password') : setError('Please, enter valid e-mail')  
 		}
 	}
 
@@ -45,11 +51,16 @@ const AuthContext = ({ children }) => {
 	}
 
 	useEffect(() => {
-		onAuthStateChanged(auth, (user) => {
-			console.log(user);
+		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			setUser(user);
 		});
+
+		return () => unsubscribe();
 	}, []);
+
+	function clearError() {
+		setError(null);
+	}
 
 	function isAdmin() {
 		if (!user) {
@@ -65,7 +76,11 @@ const AuthContext = ({ children }) => {
 		login,
 		logout,
 		isAdmin,
+		error,
+        setError,
+		clearError,
 	};
+
 	return <authContext.Provider value={value}>{children}</authContext.Provider>;
 };
 
