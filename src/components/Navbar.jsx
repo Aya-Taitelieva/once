@@ -1,16 +1,12 @@
 import * as React from "react";
-import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -19,6 +15,7 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import { NavLink } from "react-router-dom";
 import { Button } from "@mui/material";
 import FlutterDashIcon from "@mui/icons-material/FlutterDash";
+import LiveSearch from "./LiveSearch";
 
 const pages = [
   { title: "Home", link: "/" },
@@ -35,46 +32,6 @@ const pages = [
     link: "/favorite",
   },
 ];
-
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
-}));
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -115,8 +72,7 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
+      onClose={handleMenuClose}>
       <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
     </Menu>
   );
@@ -136,8 +92,7 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
+      onClose={handleMobileMenuClose}>
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
@@ -150,8 +105,7 @@ export default function Navbar() {
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
-          color="inherit"
-        >
+          color="inherit">
           <Badge badgeContent={17} color="error">
             <NotificationsIcon />
           </Badge>
@@ -164,8 +118,7 @@ export default function Navbar() {
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="inherit"
-        >
+          color="inherit">
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
@@ -181,16 +134,14 @@ export default function Navbar() {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 1 }}
-          >
+            sx={{ mr: 1 }}>
             <FlutterDashIcon />
           </IconButton>
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
+            sx={{ display: { xs: "none", sm: "block" } }}>
             ONCE
           </Typography>
           <Box sx={{ display: "flex" }}>
@@ -199,28 +150,18 @@ export default function Navbar() {
                 component={NavLink}
                 to={page.link}
                 sx={{ my: "2", color: "white" }}
-                key={page.title}
-              >
+                key={page.title}>
                 {page.title}
               </Button>
             ))}
           </Box>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
+          <LiveSearch />
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
-              color="inherit"
-            >
+              color="inherit">
               <LocalMallIcon />
             </IconButton>
             <IconButton
@@ -230,8 +171,7 @@ export default function Navbar() {
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
+              color="inherit">
               <AccountCircle />
             </IconButton>
           </Box>
@@ -242,8 +182,7 @@ export default function Navbar() {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
+              color="inherit">
               <MoreIcon />
             </IconButton>
           </Box>
