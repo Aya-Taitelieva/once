@@ -99,8 +99,14 @@ const HomePage = () => {
         >
           <Button
             onClick={() => navigate("/ox")}
+
             sx={{ width: "200px", marginTop: "10px", color: "white" }}
           ></Button>
+
+            sx={{ width: "200px", marginTop: "10px", color: "white" }}>
+            Learn More
+          </Button>
+
         </div>
       </div>
     </div>
