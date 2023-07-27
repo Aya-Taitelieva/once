@@ -1,4 +1,7 @@
 {
+
+  "products": []
+
   "products": [
     {
       "title": "Waka",
@@ -230,4 +233,5 @@
 
     }
   ]
+
 }

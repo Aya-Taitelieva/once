@@ -14,9 +14,13 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { useMainContext } from "../contexts/MainContext";
 import { useNavigate } from "react-router-dom";
+import { useFavContext } from "../contexts/CartFavorite";
+import { Favorite } from "@mui/icons-material";
 
 const PodsItem = ({ item }) => {
   const { deletePods } = useMainContext();
+  const { addToFav, isAlreadyInCart, deleteFromFav } = useFavContext();
+
   const navigate = useNavigate();
 
   const [expanded, setExpanded] = React.useState(false);
@@ -81,7 +85,14 @@ const PodsItem = ({ item }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <FavoriteBorderIcon />
+        {isAlreadyInCart(item.id) ? (
+          <Favorite
+            sx={{ color: "red" }}
+            onClick={() => deleteFromFav(item.id)}
+          />
+        ) : (
+          <FavoriteBorderIcon onClick={() => addToFav(item)} />
+        )}
         <LocalMallIcon />
       </CardActions>
     </Card>
