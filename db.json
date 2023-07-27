@@ -43,8 +43,11 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/StrawberryBurst_f414fbe4-8f45-4c88-8669-0964892e68bf.jpg?v=1677564749",
       "imageBack": "https://www.wakavaping.com/cdn/shop/products/Side_55a1dee9-8f74-4018-9021-81fd278bf8f1.png?v=1677564749",
       "price": "15",
+
       "id": 5
+
     },
+   
     {
       "title": "Waka",
       "taste": "Lychee Burst",
@@ -80,6 +83,8 @@
       "imageBack": "https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/flavor2.jpg",
       "price": "11",
       "id": 9
+
+
     },
     {
       "title": "Elf Bar",
@@ -88,8 +93,10 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/PinkLemonade.jpg?v=1677059630&width=960",
       "imageBack": "https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/flavor9.jpg",
       "price": "11",
+
       "id": 10
     },
+    
     {
       "title": "Elf Bar",
       "taste": "Super Berry",
@@ -99,6 +106,7 @@
       "price": "11",
       "id": 11
     },
+ 
     {
       "title": "Elf Bar",
       "taste": "Rainbow Cloudz",
@@ -108,6 +116,7 @@
       "price": "11",
       "id": 12
     },
+    
     {
       "title": "Elf Bar",
       "taste": "Watermelon Ice",
@@ -115,7 +124,6 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/KiwiPassionGuava_11e8d29e-0a4d-4d7d-bc28-d73a60d0867e.jpg?v=1677061954",
       "imageBack": "https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/flavor15.jpg",
       "price": "11",
-
       "id": 13
     },
     {
@@ -171,6 +179,7 @@
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/StrawberryKiwi_4a12d8eb-e6c6-475d-b566-e5551c972517.png?v=1685676238",
       "price": "13",
       "id": 19
+
     },
     {
       "title": "Ox Bar",
@@ -198,6 +207,7 @@
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/KiwiPassionGuava_3e157e4d-58b1-43a3-b873-d6b7e3506984.png?v=1685676238",
       "price": "13",
       "id": 22
+
     },
     {
       "title": "Ox Bar",
@@ -207,6 +217,7 @@
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/DoubleDoubleCoffee.png?v=1685676238",
       "price": "13",
       "id": 23
+
     },
     {
       "title": "Ox Bar",
@@ -216,6 +227,7 @@
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/RootBeer.png?v=1685676238",
       "price": "13",
       "id": 24
+
     }
   ]
 }

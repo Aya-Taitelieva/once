@@ -38,8 +38,7 @@ const PodsItem = ({ item }) => {
       <IconButton
         onClick={handleClick}
         aria-label="settings"
-        sx={{ marginLeft: "360px", position: "absolute" }}
-      >
+        sx={{ marginLeft: "360px", position: "absolute" }}>
         <MoreVertIcon />
       </IconButton>
       <Menu
@@ -49,22 +48,19 @@ const PodsItem = ({ item }) => {
         onClose={handleClose}
         MenuListProps={{
           "aria-labelledby": "basic-button",
-        }}
-      >
+        }}>
         <MenuItem
           component={Button}
           endIcon={<DeleteIcon />}
           sx={{ textTransform: "capitalize", color: "red" }}
-          onClick={() => deletePods(item.id)}
-        >
+          onClick={() => deletePods(item.id)}>
           Delete
         </MenuItem>
         <MenuItem
           component={Button}
           endIcon={<EditIcon />}
           sx={{ textTransform: "capitalize", width: "100%" }}
-          onClick={() => navigate(`/edit/${item.id}`)}
-        >
+          onClick={() => navigate(`/edit/${item.id}`)}>
           Edit
         </MenuItem>
       </Menu>
@@ -81,7 +77,7 @@ const PodsItem = ({ item }) => {
         </Typography>
         <Typography variant="h6">{`${item.price} $`}</Typography>
         <Typography variant="body2" color="text.secondary">
-          {item.description}
+          {item.taste}
         </Typography>
       </CardContent>
       <CardActions>

@@ -7,7 +7,9 @@ const PodsList = () => {
   const { pods, getPods } = useMainContext();
 
   useEffect(() => {
-    getPods();
+    setTimeout(() => {
+      getPods();
+    }, 50);
   }, []);
   console.log(pods);
   return (
