@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -18,6 +18,7 @@ import { useFavContext } from "../contexts/CartFavorite";
 import { Favorite } from "@mui/icons-material";
 
 const PodsItem = ({ item }) => {
+  const [hovered, setHovered] = useState(false);
   const { deletePods } = useMainContext();
   const { addToFav, isAlreadyInCart, deleteFromFav } = useFavContext();
 
@@ -37,8 +38,19 @@ const PodsItem = ({ item }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
   return (
-    <Card sx={{ width: "400px", height: "530px", marginTop: "40px" }}>
+    <Card
+      sx={{ width: "400px", height: "530px", marginTop: "40px" }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}>
       <IconButton
         onClick={handleClick}
         aria-label="settings"
@@ -71,8 +83,10 @@ const PodsItem = ({ item }) => {
 
       <CardMedia
         sx={{ height: "350px" }}
-        image={item.image}
-        title="green iguana"
+        component="img"
+        height="350"
+        image={hovered ? item.imageBack : item.image}
+        alt={item.title}
       />
 
       <CardContent>
