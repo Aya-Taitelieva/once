@@ -43,7 +43,8 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/StrawberryBurst_f414fbe4-8f45-4c88-8669-0964892e68bf.jpg?v=1677564749",
       "imageBack": "https://www.wakavaping.com/cdn/shop/products/Side_55a1dee9-8f74-4018-9021-81fd278bf8f1.png?v=1677564749",
       "price": "15",
-      "id":5 
+
+      "id": 5
 
     },
    
@@ -81,62 +82,58 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/BlueberryDream_d0ac34e8-174e-4601-8309-68bddbac985e.jpg?v=1677059630&width=960",
       "imageBack": "https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/flavor2.jpg",
       "price": "11",
-"id":9
-   
+      "id": 9
+
+
     },
-  
-   
-    
     {
       "title": "Elf Bar",
-
       "taste": "Lemon Lime",
       "description": " E-liquid Capacity: 17.0ml | Nicotine Strength: 50mg/ml Battery Capacity: 500mAh | Puffs: Up to 7000 | Charging Port: Type-C",
       "image": "https://www.wakavaping.com/cdn/shop/products/PinkLemonade.jpg?v=1677059630&width=960",
       "imageBack": "https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/flavor9.jpg",
       "price": "11",
-      "id": 11
+
+      "id": 10
     },
+    
     {
       "title": "Elf Bar",
-
       "taste": "Super Berry",
       "description": "E-liquid Capacity: 17.0ml | Nicotine Strength: 50mg/ml Battery Capacity: 500mAh | Puffs: Up to 7000 | Charging Port: Type-C",
       "image": "https://www.wakavaping.com/cdn/shop/products/BlueberryRaspberry_67ccc128-2b34-44b4-9854-6a16ca544958.jpg?v=1677060441&width=960",
       "imageBack": "https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/flavor14.jpg",
       "price": "11",
-     "id": 12
+      "id": 11
     },
+ 
     {
       "title": "Elf Bar",
-
       "taste": "Rainbow Cloudz",
       "description": "E-liquid Capacity: 17.0ml | Nicotine Strength: 50mg/ml Battery Capacity: 500mAh | Puffs: Up to 7000 | Charging Port: Type-C",
       "image": "https://www.wakavaping.com/cdn/shop/products/PinkTwist_083572c9-5f7b-462c-aca3-a18b705a6af8.jpg?v=1677061954",
       "imageBack": "https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/flavor13.jpg",
       "price": "11",
-      "id": 13
+      "id": 12
     },
+    
     {
       "title": "Elf Bar",
-
       "taste": "Watermelon Ice",
       "description": "E-liquid Capacity: 17.0ml | Nicotine Strength: 50mg/ml Battery Capacity: 500mAh | Puffs: Up to 7000 | Charging Port: Type-C",
       "image": "https://www.wakavaping.com/cdn/shop/products/KiwiPassionGuava_11e8d29e-0a4d-4d7d-bc28-d73a60d0867e.jpg?v=1677061954",
       "imageBack": "https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/flavor15.jpg",
       "price": "11",
-
-      "id": 14
+      "id": 13
     },
     {
       "title": "Elf Bar",
-
       "taste": "Grape Energy",
       "description": "E-liquid Capacity: 17.0ml | Nicotine Strength: 50mg/ml Battery Capacity: 500mAh | Puffs: Up to 7000 | Charging Port: Type-C",
       "image": "https://www.wakavaping.com/cdn/shop/products/Aloe_Grape.jpg?v=1660728007&width=960",
       "imageBack": "https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/flavor8.jpg",
       "price": "11",
-      "id": 15
+      "id": 14
     },
     {
       "title": "Elf Bar",
@@ -145,7 +142,7 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/Pinenana_Melon_Copy_2.jpg?v=1660728007",
       "imageBack": "https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/flavor12.jpg",
       "price": "11",
-      "id": 16
+      "id": 15
     },
     {
       "title": "Elf Bar",
@@ -154,7 +151,7 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/Buzzing_Red.jpg?v=1659690841&width=960",
       "imageBack": "https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/flavor4.jpg",
       "price": "11",
-      "id": 17
+      "id": 16
     },
     {
       "title": "Ox Bar",
@@ -163,7 +160,7 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/Orange_Grapefruit.jpg?v=1659690841&width=960",
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/GrapefruitOrange.png?v=1685676238",
       "price": "13",
-      "id": 18
+      "id": 17
     },
     {
       "title": "Ox Bar",
@@ -172,7 +169,7 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/W_A_K_A_Punch_Copy.jpg?v=1659690841&width=960",
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/AppleGrape_8746487a-8392-4023-9f23-dff5bdad7a89.png?v=1685676238",
       "price": "13",
-      "id": 19
+      "id": 18
     },
     {
       "title": "Ox Bar",
@@ -181,7 +178,8 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/StrawberryKiwi.jpg?v=1677059630&width=960",
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/StrawberryKiwi_4a12d8eb-e6c6-475d-b566-e5551c972517.png?v=1685676238",
       "price": "13",
-      "id": 20
+      "id": 19
+
     },
     {
       "title": "Ox Bar",
@@ -190,7 +188,7 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/Mango_9be784b7-8be0-429b-b163-a56209af6d56.jpg?v=1677061758",
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/MangoPeachWatermelon_795e9238-0d22-43d0-8ff4-5b05b1556c51.png?v=1685676238",
       "price": "13",
-      "id": 21
+      "id": 20
     },
     {
       "title": "Ox Bar",
@@ -199,7 +197,7 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/IcyCoconutWater_137b328f-7b8b-4a35-8620-a588423b5faf.jpg?v=1682218765",
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/CoconutMelon.png?v=1685676238",
       "price": "13",
-      "id": 22
+      "id": 21
     },
     {
       "title": "Ox Bar",
@@ -208,7 +206,8 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/GuavaZest_956298c7-4167-4f36-a5a1-b6989e5aecbb.jpg?v=1659523267&width=960",
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/KiwiPassionGuava_3e157e4d-58b1-43a3-b873-d6b7e3506984.png?v=1685676238",
       "price": "13",
-      "id": 23
+      "id": 22
+
     },
     {
       "title": "Ox Bar",
@@ -217,7 +216,8 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/SmoothCoffee.jpg?v=1677564749",
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/DoubleDoubleCoffee.png?v=1685676238",
       "price": "13",
-      "id": 24
+      "id": 23
+
     },
     {
       "title": "Ox Bar",
@@ -226,7 +226,7 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/DarkSparkle.jpg?v=1677059630&width=960",
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/RootBeer.png?v=1685676238",
       "price": "13",
-      "id": 25
+      "id": 24
 
     }
   ]
