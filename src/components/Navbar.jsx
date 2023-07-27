@@ -12,10 +12,11 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import FlutterDashIcon from "@mui/icons-material/FlutterDash";
 import LiveSearch from "./LiveSearch";
+import { useAuthContext } from "../contexts/AuthContext";
 
 const pages = [
   { title: "Home", link: "/" },
@@ -36,7 +37,8 @@ const pages = [
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
+	const { user, logout, isAdmin } = useAuthContext();
+  const navigate = useNavigate()
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -56,10 +58,41 @@ export default function Navbar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
+  const handleLogout = async () => {
+    try {
+      handleMenuClose()
+      await logout();
+    } catch (e) {
+      handleMenuClose()
+      console.log("Logout error:", e);
+    }
+  };
+  const handleSignIn = () => {
+    handleMenuClose()
+    navigate('/auth')
+  }
   const menuId = "primary-search-account-menu";
-  const renderMenu = (
-    <Menu
+  const renderMenu = user? (
+      <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{
+        vertical: "top",
+        horizontal: "right",
+      }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{
+        vertical: "top",
+        horizontal: "right",
+      }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}>  
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Comments</MenuItem>
+      <MenuItem onClick={handleLogout}>Log out</MenuItem>
+    </Menu>
+    ) : (
+      <Menu
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: "top",
@@ -73,9 +106,10 @@ export default function Navbar() {
       }}
       open={isMenuOpen}
       onClose={handleMenuClose}>
-      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
+          
+      <MenuItem onClick={handleSignIn} >Sign in</MenuItem>
     </Menu>
-  );
+    );
 
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (

@@ -10,7 +10,7 @@ import OxPage from "../pages/OxPage";
 import ElfPage from "../pages/ElfPage";
 import WakaPage from "../pages/WakaPage";
 import Favorites from "../components/Favorites/Favorites";
-
+import AuthPage from "../pages/AuthPage";
 const MainRoutes = () => {
   return (
     <Routes>
@@ -26,6 +26,8 @@ const MainRoutes = () => {
         <Route path="/add" element={<AddPodsPage />} />
         <Route path="/edit/:id" element={<EditPodsPage />} />
       </Route>
+			<Route path="/auth" element={<AuthPage />} />
+
     </Routes>
   );
 };
