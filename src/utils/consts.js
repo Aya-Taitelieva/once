@@ -1,7 +1,10 @@
-export const API = " http://localhost:8004/products";
+export const API = "http://localhost:8000/products";
 
 export const ACTIONS = {
   pods: "pods",
+  pod: "pod",
+  search: "search",
+  pageTotalCount: "pageTotalCount",
 };
 
-export const LIMIT = 8;
+export const LIMIT = 6;

@@ -92,16 +92,10 @@ const HomePage = () => {
           }}
         >
           <Button
-
             onClick={() => navigate("/products")}
             sx={{ width: "200px", marginTop: "10px", color: "white" }}
           >
             Learn More
-
-            onClick={() => navigate("/ox")}
-            sx={{ width: "200px", marginTop: "10px", color: "white" }}>
-            Learn More >
-
           </Button>
         </div>
       </div>
