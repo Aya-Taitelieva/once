@@ -6,5 +6,6 @@ export const ACTIONS = {
   search: "search",
   pageTotalCount: "pageTotalCount",
 };
+export const ADMINS = ["admin@gmail.com"];
 
 export const LIMIT = 6;

@@ -65,7 +65,7 @@ export default function EditPodsPage() {
       return;
     }
     editPods(id, formValue);
-    navigate("/");
+    navigate("/products");
 
     setFormValue({
       title: "",
