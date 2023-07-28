@@ -27,6 +27,7 @@ const pages = [
     title: "Products",
     link: "/products",
   },
+<<<<<<< HEAD
   // {
   //   title: "New Products",
   //   link: "/add",
@@ -35,6 +36,20 @@ const pages = [
   //   title: "Favorite",
   //   link: "/favorite",
   // },
+=======
+  {
+    title: "New Products",
+    link: "/add",
+  },
+  {
+    title: "Favorite",
+    link: "/favorite",
+  },
+  {
+    title: "Cart",
+    link: "/cart",
+  },
+>>>>>>> e81ef90 (created new page and logic)
 ];
 
 export default function Navbar() {
@@ -227,8 +242,14 @@ export default function Navbar() {
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
+<<<<<<< HEAD
               color="inherit">
               <LocalMallIcon />
+=======
+              color="inherit"
+            >
+              <LocalMallIcon onClick={() => navigate("/cart")} />
+>>>>>>> e81ef90 (created new page and logic)
             </IconButton>
             <IconButton
               size="large"

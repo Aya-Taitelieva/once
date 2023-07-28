@@ -64,7 +64,8 @@ function ElfPage() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-        }}>
+        }}
+      >
         <div style={{ width: "500px", margin: "50px" }}>
           <h3>Always Vape Worry-Free</h3>
           <span style={{ width: "150px" }}>
@@ -76,7 +77,8 @@ function ElfPage() {
               display: "flex",
               margin: "30px",
               gap: "50px",
-            }}>
+            }}
+          >
             <ul>
               E-liquid
               <li style={{ color: "green" }}>100%-50%</li>
@@ -107,7 +109,8 @@ function ElfPage() {
           onClick={() => navigate("/products")}
           variant="outlined"
           size="large"
-          color="error">
+          color="error"
+        >
           GO to Shop!
         </Button>
         <img
