@@ -23,10 +23,7 @@ const PodsItem = ({ item }) => {
   const [hovered, setHovered] = useState(false);
   const { deletePods } = useMainContext();
   const { addToFav, isAlreadyInCart, deleteFromFav } = useFavContext();
-<<<<<<< HEAD
-=======
   const { addDishToCart, deleteDishFromCart, isAlFinish } = useCartContext();
->>>>>>> e81ef90 (created new page and logic)
   const { isAdmin } = useAuthContext();
   const navigate = useNavigate();
 
@@ -56,22 +53,14 @@ const PodsItem = ({ item }) => {
     <Card
       sx={{ width: "400px", height: "530px", marginTop: "40px" }}
       onMouseEnter={handleMouseEnter}
-<<<<<<< HEAD
-      onMouseLeave={handleMouseLeave}>
-=======
       onMouseLeave={handleMouseLeave}
     >
->>>>>>> e81ef90 (created new page and logic)
       {isAdmin() && (
         <IconButton
           onClick={handleClick}
           aria-label="settings"
-<<<<<<< HEAD
-          sx={{ marginLeft: "360px", position: "absolute" }}>
-=======
           sx={{ marginLeft: "360px", position: "absolute" }}
         >
->>>>>>> e81ef90 (created new page and logic)
           <MoreVertIcon />
         </IconButton>
       )}
@@ -83,34 +72,22 @@ const PodsItem = ({ item }) => {
           onClose={handleClose}
           MenuListProps={{
             "aria-labelledby": "basic-button",
-<<<<<<< HEAD
-          }}>
-=======
           }}
         >
->>>>>>> e81ef90 (created new page and logic)
           <MenuItem
             component={Button}
             endIcon={<DeleteIcon />}
             sx={{ textTransform: "capitalize", color: "red" }}
-<<<<<<< HEAD
-            onClick={() => deletePods(item.id)}>
-=======
             onClick={() => deletePods(item.id)}
           >
->>>>>>> e81ef90 (created new page and logic)
             Delete
           </MenuItem>
           <MenuItem
             component={Button}
             endIcon={<EditIcon />}
             sx={{ textTransform: "capitalize", width: "100%" }}
-<<<<<<< HEAD
-            onClick={() => navigate(`/edit/${item.id}`)}>
-=======
             onClick={() => navigate(`/edit/${item.id}`)}
           >
->>>>>>> e81ef90 (created new page and logic)
             Edit
           </MenuItem>
         </Menu>
