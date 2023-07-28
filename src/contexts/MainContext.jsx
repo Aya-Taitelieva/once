@@ -91,7 +91,7 @@ const MainContext = ({ children }) => {
     try {
       const { data } = await axios.get(`${API}/${id}`);
       dispatch({
-        type: ACTIONS.pods,
+        type: ACTIONS.pod,
         payload: data,
       });
     } catch (e) {
