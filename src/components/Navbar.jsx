@@ -18,20 +18,23 @@ import FlutterDashIcon from "@mui/icons-material/FlutterDash";
 import LiveSearch from "./LiveSearch";
 import { useAuthContext } from "../contexts/AuthContext";
 import { Avatar } from "@mui/material";
+import { useState } from "react";
+import Offcanvas from "react-bootstrap/Offcanvas";
+
 const pages = [
   { title: "Home", link: "/" },
   {
     title: "Products",
     link: "/products",
   },
-  {
-    title: "New Products",
-    link: "/add",
-  },
-  {
-    title: "Favorite",
-    link: "/favorite",
-  },
+  // {
+  //   title: "New Products",
+  //   link: "/add",
+  // },
+  // {
+  //   title: "Favorite",
+  //   link: "/favorite",
+  // },
 ];
 
 export default function Navbar() {
@@ -41,6 +44,10 @@ export default function Navbar() {
   const navigate = useNavigate();
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -86,13 +93,9 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
+      onClose={handleMenuClose}>
       <MenuItem onClick={handleMenuClose}>
-        <Avatar
-          src={user.photoURL}
-          alt={user.displayName}
-        />
+        <Avatar src={user.photoURL} alt={user.displayName} />
         <Typography variant="body1" style={{ marginLeft: "8px" }}>
           {user.displayName}
         </Typography>
@@ -114,8 +117,7 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
+      onClose={handleMenuClose}>
       <MenuItem onClick={handleSignIn}>Sign in</MenuItem>
     </Menu>
   );
@@ -135,8 +137,7 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
+      onClose={handleMobileMenuClose}>
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
@@ -149,8 +150,7 @@ export default function Navbar() {
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
-          color="inherit"
-        >
+          color="inherit">
           <Badge badgeContent={17} color="error">
             <NotificationsIcon />
           </Badge>
@@ -163,8 +163,7 @@ export default function Navbar() {
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="inherit"
-        >
+          color="inherit">
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
@@ -180,16 +179,35 @@ export default function Navbar() {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 1 }}
-          >
-            <FlutterDashIcon />
+            sx={{ mr: 1 }}>
+            <FlutterDashIcon onClick={handleShow} />
+            <Offcanvas show={show} onHide={handleClose}>
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title>PAGES</Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <h4 onClick={() => navigate("/waka")}>Waka</h4>
+                  <h4 onClick={() => navigate("/elf")}>Elf Bar</h4>
+                  <h4 onClick={() => navigate("/ox")}>Ox Bar</h4>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    marginTop: "80%",
+                  }}>
+                  <h6 onClick={() => navigate("/favorite")}>Favorites</h6>
+                  <h6 onClick={() => navigate("/add")}>New Products</h6>
+                </div>
+              </Offcanvas.Body>
+            </Offcanvas>
           </IconButton>
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
+            sx={{ display: { xs: "none", sm: "block" } }}>
             ONCE
           </Typography>
           <Box sx={{ display: "flex" }}>
@@ -198,8 +216,7 @@ export default function Navbar() {
                 component={NavLink}
                 to={page.link}
                 sx={{ my: "2", color: "white" }}
-                key={page.title}
-              >
+                key={page.title}>
                 {page.title}
               </Button>
             ))}
@@ -210,8 +227,7 @@ export default function Navbar() {
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
-              color="inherit"
-            >
+              color="inherit">
               <LocalMallIcon />
             </IconButton>
             <IconButton
@@ -221,8 +237,7 @@ export default function Navbar() {
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
+              color="inherit">
               <AccountCircle />
             </IconButton>
           </Box>
@@ -233,8 +248,7 @@ export default function Navbar() {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
+              color="inherit">
               <MoreIcon />
             </IconButton>
           </Box>
