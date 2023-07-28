@@ -27,18 +27,6 @@ const pages = [
     title: "Products",
     link: "/products",
   },
-  {
-    title: "New Products",
-    link: "/add",
-  },
-  {
-    title: "Favorite",
-    link: "/favorite",
-  },
-  {
-    title: "Cart",
-    link: "/cart",
-  },
 ];
 
 export default function Navbar() {
