@@ -17,7 +17,7 @@ import { Button } from "@mui/material";
 import FlutterDashIcon from "@mui/icons-material/FlutterDash";
 import LiveSearch from "./LiveSearch";
 import { useAuthContext } from "../contexts/AuthContext";
-
+import { Avatar } from "@mui/material";
 const pages = [
   { title: "Home", link: "/" },
   {
@@ -37,8 +37,8 @@ const pages = [
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-	const { user, logout, isAdmin } = useAuthContext();
-  const navigate = useNavigate()
+  const { user, logout, isAdmin } = useAuthContext();
+  const navigate = useNavigate();
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -60,20 +60,20 @@ export default function Navbar() {
   };
   const handleLogout = async () => {
     try {
-      handleMenuClose()
+      handleMenuClose();
       await logout();
     } catch (e) {
-      handleMenuClose()
+      handleMenuClose();
       console.log("Logout error:", e);
     }
   };
   const handleSignIn = () => {
-    handleMenuClose()
-    navigate('/auth')
-  }
+    handleMenuClose();
+    navigate("/auth");
+  };
   const menuId = "primary-search-account-menu";
-  const renderMenu = user? (
-      <Menu
+  const renderMenu = user ? (
+    <Menu
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: "top",
@@ -86,13 +86,22 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMenuOpen}
-      onClose={handleMenuClose}>  
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      onClose={handleMenuClose}
+    >
+      <MenuItem onClick={handleMenuClose}>
+        <Avatar
+          src={user.photoURL}
+          alt={user.displayName}
+        />
+        <Typography variant="body1" style={{ marginLeft: "8px" }}>
+          {user.displayName}
+        </Typography>
+      </MenuItem>
       <MenuItem onClick={handleMenuClose}>Comments</MenuItem>
       <MenuItem onClick={handleLogout}>Log out</MenuItem>
     </Menu>
-    ) : (
-      <Menu
+  ) : (
+    <Menu
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: "top",
@@ -105,11 +114,11 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMenuOpen}
-      onClose={handleMenuClose}>
-          
-      <MenuItem onClick={handleSignIn} >Sign in</MenuItem>
+      onClose={handleMenuClose}
+    >
+      <MenuItem onClick={handleSignIn}>Sign in</MenuItem>
     </Menu>
-    );
+  );
 
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
@@ -126,7 +135,8 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}>
+      onClose={handleMobileMenuClose}
+    >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
@@ -139,7 +149,8 @@ export default function Navbar() {
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
-          color="inherit">
+          color="inherit"
+        >
           <Badge badgeContent={17} color="error">
             <NotificationsIcon />
           </Badge>
@@ -152,7 +163,8 @@ export default function Navbar() {
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="inherit">
+          color="inherit"
+        >
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
@@ -168,14 +180,16 @@ export default function Navbar() {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 1 }}>
+            sx={{ mr: 1 }}
+          >
             <FlutterDashIcon />
           </IconButton>
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}>
+            sx={{ display: { xs: "none", sm: "block" } }}
+          >
             ONCE
           </Typography>
           <Box sx={{ display: "flex" }}>
@@ -184,7 +198,8 @@ export default function Navbar() {
                 component={NavLink}
                 to={page.link}
                 sx={{ my: "2", color: "white" }}
-                key={page.title}>
+                key={page.title}
+              >
                 {page.title}
               </Button>
             ))}
@@ -195,7 +210,8 @@ export default function Navbar() {
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
-              color="inherit">
+              color="inherit"
+            >
               <LocalMallIcon />
             </IconButton>
             <IconButton
@@ -205,7 +221,8 @@ export default function Navbar() {
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
-              color="inherit">
+              color="inherit"
+            >
               <AccountCircle />
             </IconButton>
           </Box>
@@ -216,7 +233,8 @@ export default function Navbar() {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit">
+              color="inherit"
+            >
               <MoreIcon />
             </IconButton>
           </Box>

@@ -16,12 +16,13 @@ import { useMainContext } from "../contexts/MainContext";
 import { useNavigate } from "react-router-dom";
 import { useFavContext } from "../contexts/CartFavorite";
 import { Favorite } from "@mui/icons-material";
+import { useAuthContext } from "../contexts/AuthContext";
 
 const PodsItem = ({ item }) => {
   const [hovered, setHovered] = useState(false);
   const { deletePods } = useMainContext();
   const { addToFav, isAlreadyInCart, deleteFromFav } = useFavContext();
-
+  const {isAdmin} = useAuthContext()
   const navigate = useNavigate();
 
   const [expanded, setExpanded] = React.useState(false);
@@ -51,13 +52,13 @@ const PodsItem = ({ item }) => {
       sx={{ width: "400px", height: "530px", marginTop: "40px" }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
-      <IconButton
+      {isAdmin() && <IconButton
         onClick={handleClick}
         aria-label="settings"
         sx={{ marginLeft: "360px", position: "absolute" }}>
         <MoreVertIcon />
-      </IconButton>
-      <Menu
+      </IconButton>}
+      {isAdmin() && <Menu
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
@@ -79,8 +80,7 @@ const PodsItem = ({ item }) => {
           onClick={() => navigate(`/edit/${item.id}`)}>
           Edit
         </MenuItem>
-      </Menu>
-
+      </Menu>}
       <CardMedia
         sx={{ height: "350px" }}
         component="img"

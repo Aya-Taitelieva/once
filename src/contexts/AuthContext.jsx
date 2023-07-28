@@ -20,8 +20,8 @@ const AuthContext = ({ children }) => {
 	const [error, setError] = useState(null);
 
 	async function register(email, password, displayName, photoURL) {
-        if (!displayName) {
-            setError('Please, enter your name')
+        if (!displayName || displayName.length > 30) {
+            setError('Please, enter your name properly')
             return
         }
 		try {
