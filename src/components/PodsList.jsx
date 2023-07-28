@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useMainContext } from "../contexts/MainContext";
 import { Box, CircularProgress } from "@mui/material";
 import PodsItem from "./PodsItem";
+import DetailsPage from "../pages/DetailsPage";
 
 const PodsList = () => {
   const { pods, getPods } = useMainContext();
@@ -11,15 +12,14 @@ const PodsList = () => {
       getPods();
     }, 50);
   }, []);
-  console.log(pods);
+  // console.log(pods);
   return (
     <Box
       sx={{
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",
-      }}
-    >
+      }}>
       {pods.length > 0 ? (
         <div className="card-wrapper">
           {pods.map((item) => (
