@@ -32,6 +32,10 @@ const pages = [
     title: "Favorite",
     link: "/favorite",
   },
+  {
+    title: "Cart",
+    link: "/cart",
+  },
 ];
 
 export default function Navbar() {
@@ -89,10 +93,7 @@ export default function Navbar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>
-        <Avatar
-          src={user.photoURL}
-          alt={user.displayName}
-        />
+        <Avatar src={user.photoURL} alt={user.displayName} />
         <Typography variant="body1" style={{ marginLeft: "8px" }}>
           {user.displayName}
         </Typography>
@@ -212,7 +213,7 @@ export default function Navbar() {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <LocalMallIcon />
+              <LocalMallIcon onClick={() => navigate("/cart")} />
             </IconButton>
             <IconButton
               size="large"

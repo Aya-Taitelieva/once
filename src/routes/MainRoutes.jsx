@@ -12,6 +12,7 @@ import WakaPage from "../pages/WakaPage";
 import Favorites from "../components/Favorites/Favorites";
 import AuthPage from "../pages/AuthPage";
 import AdminRoute from "./AdminRoute";
+import CartPage from "../pages/CartPage";
 const MainRoutes = () => {
   return (
     <Routes>
@@ -23,6 +24,7 @@ const MainRoutes = () => {
         <Route path="/elf" element={<ElfPage />} />
         <Route path="/waka" element={<WakaPage />} />
         <Route path="/favorite" element={<Favorites />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route element={<AdminRoute />}>
           <Route path="/add" element={<AddPodsPage />} />
           <Route path="/edit/:id" element={<EditPodsPage />} />

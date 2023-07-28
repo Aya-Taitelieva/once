@@ -17,12 +17,14 @@ import { useNavigate } from "react-router-dom";
 import { useFavContext } from "../contexts/CartFavorite";
 import { Favorite } from "@mui/icons-material";
 import { useAuthContext } from "../contexts/AuthContext";
+import { useCartContext } from "../contexts/CartContext";
 
 const PodsItem = ({ item }) => {
   const [hovered, setHovered] = useState(false);
   const { deletePods } = useMainContext();
   const { addToFav, isAlreadyInCart, deleteFromFav } = useFavContext();
-  const {isAdmin} = useAuthContext()
+  const { addDishToCart, deleteDishFromCart, isAlFinish } = useCartContext();
+  const { isAdmin } = useAuthContext();
   const navigate = useNavigate();
 
   const [expanded, setExpanded] = React.useState(false);
@@ -51,36 +53,45 @@ const PodsItem = ({ item }) => {
     <Card
       sx={{ width: "400px", height: "530px", marginTop: "40px" }}
       onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}>
-      {isAdmin() && <IconButton
-        onClick={handleClick}
-        aria-label="settings"
-        sx={{ marginLeft: "360px", position: "absolute" }}>
-        <MoreVertIcon />
-      </IconButton>}
-      {isAdmin() && <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-        }}>
-        <MenuItem
-          component={Button}
-          endIcon={<DeleteIcon />}
-          sx={{ textTransform: "capitalize", color: "red" }}
-          onClick={() => deletePods(item.id)}>
-          Delete
-        </MenuItem>
-        <MenuItem
-          component={Button}
-          endIcon={<EditIcon />}
-          sx={{ textTransform: "capitalize", width: "100%" }}
-          onClick={() => navigate(`/edit/${item.id}`)}>
-          Edit
-        </MenuItem>
-      </Menu>}
+      onMouseLeave={handleMouseLeave}
+    >
+      {isAdmin() && (
+        <IconButton
+          onClick={handleClick}
+          aria-label="settings"
+          sx={{ marginLeft: "360px", position: "absolute" }}
+        >
+          <MoreVertIcon />
+        </IconButton>
+      )}
+      {isAdmin() && (
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+        >
+          <MenuItem
+            component={Button}
+            endIcon={<DeleteIcon />}
+            sx={{ textTransform: "capitalize", color: "red" }}
+            onClick={() => deletePods(item.id)}
+          >
+            Delete
+          </MenuItem>
+          <MenuItem
+            component={Button}
+            endIcon={<EditIcon />}
+            sx={{ textTransform: "capitalize", width: "100%" }}
+            onClick={() => navigate(`/edit/${item.id}`)}
+          >
+            Edit
+          </MenuItem>
+        </Menu>
+      )}
       <CardMedia
         sx={{ height: "350px" }}
         component="img"
@@ -107,7 +118,14 @@ const PodsItem = ({ item }) => {
         ) : (
           <FavoriteBorderIcon onClick={() => addToFav(item)} />
         )}
-        <LocalMallIcon />
+        {isAlFinish(item.id) ? (
+          <LocalMallIcon
+            sx={{ color: "red" }}
+            onClick={() => deleteDishFromCart(item.id)}
+          />
+        ) : (
+          <LocalMallIcon onClick={() => addDishToCart(item)} />
+        )}
       </CardActions>
     </Card>
   );
