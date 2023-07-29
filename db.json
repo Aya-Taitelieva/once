@@ -219,9 +219,12 @@
   ],
   "comments": [
     {
-      "comment": "s",
-      "userEmail": "admin@gmail.com",
-      "userDisplayName": null,
+      "comment": "sad",
+      "user": {
+        "email": "admin@gmail.com",
+        "displayName": null,
+        "photoURL": null
+      },
       "podId": 2,
       "id": 1
     }

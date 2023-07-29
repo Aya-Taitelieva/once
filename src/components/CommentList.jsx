@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CircularProgress, Container, Grid, Typography } from "@mui/material";
 import { useCommentContext } from "../contexts/CommentContext";
 import Comment from "./Comment";
-const CommentList = ({ post, showComments, setShowComments }) => {
+const CommentList = ({ pod, showComments, setShowComments }) => {
   const { comments, filterComments } = useCommentContext();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -10,7 +10,7 @@ const CommentList = ({ post, showComments, setShowComments }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        filterComments("postId", post.id);
+        filterComments("postId", pod.id);
         setTimeout(() => {
           setLoading(false);
         }, 800);
@@ -20,7 +20,7 @@ const CommentList = ({ post, showComments, setShowComments }) => {
       }
     };
     fetchData();
-  }, [post, showComments]);
+  }, [pod, showComments]);
   return (
     <div>
       <Grid sx={{ my: 3, gap: "2rem" }} container spacing={2}>
@@ -45,7 +45,7 @@ const CommentList = ({ post, showComments, setShowComments }) => {
               <Comment
                 item={item}
                 key={item.id}
-                userEmail={item.email}
+                commentUser={item.user}
                 setShowComments={setShowComments}
               />
             );

@@ -10,10 +10,9 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useAuthContext } from "../contexts/AuthContext";
 import { useCommentContext } from "../contexts/CommentContext";
 
-const Comment = ({ item, userEmail, setShowComments }) => {
+const Comment = ({ item, commentUser, setShowComments }) => {
   const navigate = useNavigate();
-  const { user, getUserByEmail, isAdmin } = useAuthContext();
-  const commentUser = getUserByEmail(userEmail)
+  const { user, isAdmin } = useAuthContext();
   const { deleteComment } = useCommentContext();
   function handleDelete() {
     deleteComment(item.id);
@@ -35,9 +34,7 @@ const Comment = ({ item, userEmail, setShowComments }) => {
               component="div"
               sx={{ cursor: "pointer", marginBottom: "1rem" }}
             >
-              {commentUser.displayName.length < 12
-                ? commentUser.displayName
-                : commentUser.displayName.slice(0, 12) + "..."}
+              {commentUser.displayName}
             </Typography>
             <Avatar
               src={commentUser.photoURL}
@@ -59,20 +56,19 @@ const Comment = ({ item, userEmail, setShowComments }) => {
             {item.comment}
           </Typography>
 
-          {user &&
-            (isAdmin(user) || user.email === commentUser.email) && (
-              <CardActions
-                sx={{
-                  display: "flex",
-                  justifyContent: "end",
-                  marginLeft: "1.5rem",
-                }}
-              >
-                <IconButton onClick={handleDelete}>
-                  <DeleteOutlineIcon />
-                </IconButton>
-              </CardActions>
-            )}
+          {user && (isAdmin(user) || user.email === commentUser.email) && (
+            <CardActions
+              sx={{
+                display: "flex",
+                justifyContent: "end",
+                marginLeft: "1.5rem",
+              }}
+            >
+              <IconButton onClick={handleDelete}>
+                <DeleteOutlineIcon />
+              </IconButton>
+            </CardActions>
+          )}
         </CardContent>
       </Card>
     </Grid>

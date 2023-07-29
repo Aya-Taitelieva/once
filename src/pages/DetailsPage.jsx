@@ -45,8 +45,11 @@ const DetailsPage = () => {
     }
     addComment({
       comment: newComment,
-      userEmail: user.email,
-      userDisplayName: user.displayName,
+      user: {
+        email: user.email,
+        displayName: user.displayName,
+        photoURL: user.photoURL,
+      },
       podId: onePod.id,
     });
     setNewComment("");
@@ -97,7 +100,8 @@ const DetailsPage = () => {
         </Button>
       </Box>
     </Container>
-      <Box sx={{ width:'50%', margin: '2rem auto'}}>
+    <Box sx={{ width:'50%', margin: '2rem auto'}}>
+      <Box sx={{my:3}}>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <TextField
             label="Add Comment"
@@ -112,7 +116,7 @@ const DetailsPage = () => {
         </Box>
       </Box>
 
-      <Accordion expanded={showComments} sx={{width:'50%', margin: '0 auto'}}>
+      <Accordion expanded={showComments} >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           onClick={() => setShowComments(!showComments)}
@@ -131,6 +135,7 @@ const DetailsPage = () => {
           />
         </AccordionDetails>
       </Accordion>
+      </Box>
     </div>
   );
 };
