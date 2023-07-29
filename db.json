@@ -226,6 +226,7 @@
         "photoURL": null
       },
       "podId": 2,
+      "likes" : [],
       "id": 1
     },
     {
@@ -236,6 +237,7 @@
         "photoURL": null
       },
       "podId": 2,
+      "likes" : [],
       "id": 2
     },
     {
@@ -246,6 +248,7 @@
         "photoURL": "https://images.unsplash.com/photo-1439792675105-701e6a4ab6f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80"
       },
       "podId": 1,
+      "likes" : [],
       "id": 3
     },
     {
@@ -256,6 +259,7 @@
         "photoURL": null
       },
       "podId": 3,
+      "likes" : [],
       "id": 4
     },
     {
@@ -266,6 +270,7 @@
         "photoURL": null
       },
       "podId": 3,
+      "likes" : [],
       "id": 5
     }
   ]

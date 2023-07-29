@@ -51,6 +51,7 @@ const DetailsPage = () => {
         photoURL: user.photoURL,
       },
       podId: onePod.id,
+      likes: []
     });
     setNewComment("");
     setShowComments(false);

@@ -1,10 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import { Grid } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Avatar, IconButton } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import CardActions from "@mui/material/CardActions";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useAuthContext } from "../contexts/AuthContext";
@@ -13,6 +13,7 @@ import { useCommentContext } from "../contexts/CommentContext";
 const Comment = ({ item, commentUser, setShowComments }) => {
   const { user, isAdmin } = useAuthContext();
   const { deleteComment } = useCommentContext();
+  const [isActive, setIsActive] = useState(false);
   function handleDelete() {
     deleteComment(item.id);
     setShowComments(false);
@@ -54,19 +55,27 @@ const Comment = ({ item, commentUser, setShowComments }) => {
             {item.comment}
           </Typography>
 
-          {user && (isAdmin(user) || user.email === commentUser.email) && (
-            <CardActions
-              sx={{
-                display: "flex",
-                justifyContent: "end",
-                marginLeft: "1.5rem",
-              }}
-            >
+          <CardActions
+            sx={{
+              display: "flex",
+              justifyContent: "end",
+              marginLeft: "1.5rem",
+            }}
+          >
+            {user && (isAdmin(user) || user.email === commentUser.email) && (
               <IconButton onClick={handleDelete}>
                 <DeleteOutlineIcon />
               </IconButton>
-            </CardActions>
-          )}
+            )}
+            <div>
+              <IconButton color={isActive ? "primary" : "default"}>
+                <ThumbUpIcon />
+              </IconButton>
+              <Typography variant="body1" component="span">
+                {1}
+              </Typography>
+            </div>
+          </CardActions>
         </CardContent>
       </Card>
     </Grid>

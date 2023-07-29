@@ -30,12 +30,34 @@ const CommentContext = ({ children }) => {
     });
     setComments(data);
   }
+  async function likeComment(commentId, userEmail) {
+    try {
+      const commentResponse = await axios.get(`${API_COMMENTS}/${commentId}`);
+      const comment = commentResponse.data;
+  
+      const userIndex = comment.likes.indexOf(userEmail);
+  
+      if (userIndex === -1) {
+        const updatedLikes = [...comment.likes, userEmail];
+        await axios.put(`${API_COMMENTS}/${commentId}`, { likes: updatedLikes });
+        console.log("Comment liked successfully.");
+      } else {
+        const updatedLikes = comment.likes.filter((email) => email !== userEmail);
+        await axios.put(`${API_COMMENTS}/${commentId}`, { likes: updatedLikes });
+        console.log("Comment unliked successfully.");
+      }
+    } catch (error) {
+      console.error("Error liking/unliking comment:", error);
+      // Handle errors as needed.
+    }
+  }
   const value = {
     comments,
     getComments,
     addComment,
     deleteComment,
-    filterComments
+    filterComments,
+    likeComment
   };
 
   return (
