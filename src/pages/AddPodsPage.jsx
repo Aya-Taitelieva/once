@@ -74,8 +74,7 @@ export default function AddPodsPage() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-          }}
-        >
+          }}>
           <Typography component="h1" variant="h5">
             New Pods
           </Typography>
@@ -83,8 +82,7 @@ export default function AddPodsPage() {
             component="form"
             onSubmit={handleSubmit}
             noValidate
-            sx={{ mt: 1 }}
-          >
+            sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -145,8 +143,7 @@ export default function AddPodsPage() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2, background: "black" }}
-            >
+              sx={{ mt: 3, mb: 2, background: "black" }}>
               Add New Pods
             </Button>
           </Box>

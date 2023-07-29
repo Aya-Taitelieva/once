@@ -21,10 +21,6 @@ const DetailsPage = () => {
   });
   useEffect(() => {
     getOnePods(id);
-    document.body.classList.add("details");
-    return () => {
-      document.body.classList.remove("details");
-    };
   }, []);
   console.log(pod, "sdadasd");
   useEffect(() => {

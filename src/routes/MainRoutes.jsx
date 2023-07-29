@@ -14,11 +14,14 @@ import AuthPage from "../pages/AuthPage";
 import AdminRoute from "./AdminRoute";
 import DetailsPage from "../pages/DetailsPage";
 import CartPage from "../pages/CartPage";
+
+import VerificationPage from "../pages/VerificationPage";
 const MainRoutes = () => {
   return (
     <Routes>
+      <Route path="/" element={<VerificationPage />} />
       <Route element={<MainLayouts />}>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/products" element={<ProductsPodsPage />} />
 
         <Route path="/ox" element={<OxPage />} />

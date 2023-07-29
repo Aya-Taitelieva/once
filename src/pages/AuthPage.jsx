@@ -76,8 +76,7 @@ export default function AuthPage() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-          }}
-        >
+          }}>
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
@@ -88,8 +87,7 @@ export default function AuthPage() {
             component="form"
             onSubmit={handleSubmit}
             noValidate
-            sx={{ mt: 1 }}
-          >
+            sx={{ mt: 1 }}>
             {!state.isLogin && (
               <>
                 <TextField
@@ -169,8 +167,7 @@ export default function AuthPage() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
+              sx={{ mt: 3, mb: 2 }}>
               {state.isLogin ? "Sign In" : "Sign Up"}
             </Button>
             <Grid container>
@@ -179,8 +176,7 @@ export default function AuthPage() {
                 <Link
                   onClick={() => dispatch({ type: "TOGGLE_FORM" })}
                   href="#"
-                  variant="body2"
-                >
+                  variant="body2">
                   {state.isLogin
                     ? "Don't have an account? Sign Up"
                     : "Already have an account? Sign In"}
@@ -193,9 +189,11 @@ export default function AuthPage() {
           open={!!error}
           autoHideDuration={6000}
           onClose={clearError}
-          anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        >
-          <Alert onClose={clearError} severity="error" sx={{ width: "33vw", fontSize:'1.5rem'}}>
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}>
+          <Alert
+            onClose={clearError}
+            severity="error"
+            sx={{ width: "33vw", fontSize: "1.5rem" }}>
             {error}
           </Alert>
         </Snackbar>
