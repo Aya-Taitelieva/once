@@ -35,13 +35,13 @@ const CommentContext = ({ children }) => {
       if (!comment.likes.includes(userEmail)) {
         const updatedLikes = [...comment.likes, userEmail];
         await axios.patch(`${API_COMMENTS}/${commentId}`, { likes: updatedLikes });
-        filterComments("podId", podId)
+        getComments("podId", podId)
         console.log("Comment liked successfully.");
       } else {
         const updatedLikes = comment.likes.filter((email) => email !== userEmail);
         await axios.patch(`${API_COMMENTS}/${commentId}`, { likes: updatedLikes });
         console.log("Comment unliked successfully.");
-        filterComments("podId", podId)
+        getComments("podId", podId)
       }
     } catch (error) {
       console.error("Error liking/unliking comment:", error);
@@ -52,7 +52,6 @@ const CommentContext = ({ children }) => {
     getComments,
     addComment,
     deleteComment,
-    filterComments,
     likeComment
   };
 

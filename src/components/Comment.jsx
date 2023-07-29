@@ -13,28 +13,31 @@ import { useCommentContext } from "../contexts/CommentContext";
 const Comment = ({ item, commentUser, podId }) => {
   const { user, isAdmin } = useAuthContext();
   const { deleteComment, likeComment } = useCommentContext();
-  const [ likeCount, setLikeCount ] = useState(item.likes.length);
+  const [likeCount, setLikeCount] = useState(item.likes.length);
   const [isActive, setIsActive] = useState(false);
   function handleDelete() {
     deleteComment(item.id, podId);
   }
   function handleLike() {
-    if(!user) {
-      return
+    if (!user) {
+      return;
     }
-    likeComment(item.id, user.email, podId)
-    setLikeCount(item.likes.length)
+    likeComment(item.id, user.email, podId);
     console.log(item.likes);
   }
   useEffect(() => {
     if (user) {
-      if(item.likes.includes(user.email)) {
-        setIsActive(true)
+      if (item.likes.includes(user.email)) {
+        setIsActive(true);
+        setLikeCount(item.likes.length);
       } else {
-        setIsActive(false)
+        setIsActive(false);
+        setLikeCount(item.likes.length);
       }
+    } else {
+      setIsActive(false)
     }
-  }, [likeCount, item])
+  }, [likeCount, item]);
 
   return (
     <Grid item xs={12} md={12} lg={12}>
@@ -86,7 +89,10 @@ const Comment = ({ item, commentUser, podId }) => {
               </IconButton>
             )}
             <div>
-              <IconButton color={isActive ? "primary" : "default"} onClick={handleLike}>
+              <IconButton
+                color={isActive ? "primary" : "default"}
+                onClick={handleLike}
+              >
                 <ThumbUpIcon />
               </IconButton>
               <Typography variant="body1" component="span">
