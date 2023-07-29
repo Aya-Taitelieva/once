@@ -11,7 +11,6 @@ import { useAuthContext } from "../contexts/AuthContext";
 import { useCommentContext } from "../contexts/CommentContext";
 
 const Comment = ({ item, commentUser, setShowComments }) => {
-  const navigate = useNavigate();
   const { user, isAdmin } = useAuthContext();
   const { deleteComment } = useCommentContext();
   function handleDelete() {
@@ -44,7 +43,6 @@ const Comment = ({ item, commentUser, setShowComments }) => {
                 cursor: "pointer",
                 marginBottom: "1rem",
               }}
-              onClick={() => navigate(`/profile/${commentUser.email}`)}
             />
           </div>
           <Typography

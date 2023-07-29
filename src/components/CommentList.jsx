@@ -2,20 +2,19 @@ import React, { useEffect, useState } from "react";
 import { CircularProgress, Container, Grid, Typography } from "@mui/material";
 import { useCommentContext } from "../contexts/CommentContext";
 import Comment from "./Comment";
-const CommentList = ({ pod, showComments, setShowComments }) => {
+const CommentList = ({ pod,id , showComments, setShowComments }) => {
   const { comments, filterComments } = useCommentContext();
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        filterComments("postId", pod.id);
+        filterComments("podId", id);
         setTimeout(() => {
           setLoading(false);
         }, 800);
       } catch (error) {
-        setError(error);
+        console.error(error);
         setLoading(false);
       }
     };
@@ -35,10 +34,6 @@ const CommentList = ({ pod, showComments, setShowComments }) => {
           >
             <CircularProgress size={80} />
           </Container>
-        ) : error ? (
-          <Typography variant="body1" color="error" fontSize={"40px"}>
-            There is a problem with the server. Please fix it.
-          </Typography>
         ) : comments.length > 0 ? (
           comments.map((item) => {
             return (

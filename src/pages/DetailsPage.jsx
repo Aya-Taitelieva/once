@@ -130,6 +130,7 @@ const DetailsPage = () => {
         <AccordionDetails>
           <CommentList
             post={onePod}
+            id = {id}
             showComments={showComments}
             setShowComments={setShowComments}
           />
