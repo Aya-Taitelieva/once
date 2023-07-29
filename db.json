@@ -43,10 +43,8 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/StrawberryBurst_f414fbe4-8f45-4c88-8669-0964892e68bf.jpg?v=1677564749",
       "imageBack": "https://www.wakavaping.com/cdn/shop/products/Side_55a1dee9-8f74-4018-9021-81fd278bf8f1.png?v=1677564749",
       "price": 15,
-
       "id": 5
     },
-
     {
       "title": "WAKA",
       "taste": "Lychee Burst",
@@ -90,10 +88,8 @@
       "image": "https://www.wakavaping.com/cdn/shop/products/PinkLemonade.jpg?v=1677059630&width=960",
       "imageBack": "https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/flavor9.jpg",
       "price": 11,
-
       "id": 10
     },
-
     {
       "title": "Elf Bar",
       "taste": "Super Berry",
@@ -103,7 +99,6 @@
       "price": 11,
       "id": 11
     },
-
     {
       "title": "Elf Bar",
       "taste": "Rainbow Cloudz",
@@ -113,7 +108,6 @@
       "price": 11,
       "id": 12
     },
-
     {
       "title": "Elf Bar",
       "taste": "Watermelon Ice",
@@ -221,6 +215,15 @@
       "imageBack": "https://cdn.shopify.com/s/files/1/0584/6709/0582/files/RootBeer.png?v=1685676238",
       "price": 13,
       "id": 24
+    }
+  ],
+  "comments": [
+    {
+      "comment": "s",
+      "userEmail": "admin@gmail.com",
+      "userDisplayName": null,
+      "podId": 2,
+      "id": 1
     }
   ]
 }

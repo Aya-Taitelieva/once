@@ -4,7 +4,7 @@ import {
 	signInWithEmailAndPassword,
 	signOut,
 	updateProfile,
-} from "firebase/auth";
+	getUserByEmail} from "firebase/auth";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../firebase";
 import { ADMINS } from "../utils/consts";
@@ -69,6 +69,7 @@ const AuthContext = ({ children }) => {
 
 		return ADMINS.includes(user.email);
 	}
+
 
 	const value = {
 		user,
