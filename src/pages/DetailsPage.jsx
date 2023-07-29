@@ -52,9 +52,8 @@ const DetailsPage = () => {
       },
       podId: onePod.id,
       likes: []
-    });
+    }, id);
     setNewComment("");
-    setShowComments(false);
   };
   return (
     <div>

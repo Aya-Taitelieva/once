@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -10,14 +10,32 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useAuthContext } from "../contexts/AuthContext";
 import { useCommentContext } from "../contexts/CommentContext";
 
-const Comment = ({ item, commentUser, setShowComments }) => {
+const Comment = ({ item, commentUser, podId }) => {
   const { user, isAdmin } = useAuthContext();
-  const { deleteComment } = useCommentContext();
+  const { deleteComment, likeComment } = useCommentContext();
+  const [ likeCount, setLikeCount ] = useState(item.likes.length);
   const [isActive, setIsActive] = useState(false);
   function handleDelete() {
-    deleteComment(item.id);
-    setShowComments(false);
+    deleteComment(item.id, podId);
   }
+  function handleLike() {
+    if(!user) {
+      return
+    }
+    likeComment(item.id, user.email, podId)
+    setLikeCount(item.likes.length)
+    console.log(item.likes);
+  }
+  useEffect(() => {
+    if (user) {
+      if(item.likes.includes(user.email)) {
+        setIsActive(true)
+      } else {
+        setIsActive(false)
+      }
+    }
+  }, [likeCount, item])
+
   return (
     <Grid item xs={12} md={12} lg={12}>
       <Card sx={{ margin: "0 auto" }}>
@@ -68,11 +86,11 @@ const Comment = ({ item, commentUser, setShowComments }) => {
               </IconButton>
             )}
             <div>
-              <IconButton color={isActive ? "primary" : "default"}>
+              <IconButton color={isActive ? "primary" : "default"} onClick={handleLike}>
                 <ThumbUpIcon />
               </IconButton>
               <Typography variant="body1" component="span">
-                {1}
+                {likeCount}
               </Typography>
             </div>
           </CardActions>

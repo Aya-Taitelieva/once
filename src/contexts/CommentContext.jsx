@@ -10,19 +10,7 @@ export function useCommentContext() {
 const CommentContext = ({ children }) => {
   const [comments, setComments] = useState([]);
 
-  async function getComments() {
-    const { data } = await axios.get(API_COMMENTS);
-    setComments(data);
-  }
-  async function deleteComment(id) {
-    await axios.delete(`${API_COMMENTS}/${id}`);
-    getComments();
-  }
-  async function addComment(obj) {
-    await axios.post(API_COMMENTS, obj);
-    getComments();
-  }
-  async function filterComments(key, value) {
+  async function getComments(key, value) {
     const { data } = await axios.get(API_COMMENTS, {
       params: {
         [key]: value,
@@ -30,25 +18,33 @@ const CommentContext = ({ children }) => {
     });
     setComments(data);
   }
-  async function likeComment(commentId, userEmail) {
+  async function deleteComment(id, podId) {
+    await axios.delete(`${API_COMMENTS}/${id}`);
+    getComments("podId", podId);
+  }
+  async function addComment(obj, podId) {
+    await axios.post(API_COMMENTS, obj);
+    getComments("podId", podId);
+  }
+
+  async function likeComment(commentId, userEmail, podId) {
     try {
       const commentResponse = await axios.get(`${API_COMMENTS}/${commentId}`);
       const comment = commentResponse.data;
   
-      const userIndex = comment.likes.indexOf(userEmail);
-  
-      if (userIndex === -1) {
+      if (!comment.likes.includes(userEmail)) {
         const updatedLikes = [...comment.likes, userEmail];
-        await axios.put(`${API_COMMENTS}/${commentId}`, { likes: updatedLikes });
+        await axios.patch(`${API_COMMENTS}/${commentId}`, { likes: updatedLikes });
+        filterComments("podId", podId)
         console.log("Comment liked successfully.");
       } else {
         const updatedLikes = comment.likes.filter((email) => email !== userEmail);
-        await axios.put(`${API_COMMENTS}/${commentId}`, { likes: updatedLikes });
+        await axios.patch(`${API_COMMENTS}/${commentId}`, { likes: updatedLikes });
         console.log("Comment unliked successfully.");
+        filterComments("podId", podId)
       }
     } catch (error) {
       console.error("Error liking/unliking comment:", error);
-      // Handle errors as needed.
     }
   }
   const value = {
