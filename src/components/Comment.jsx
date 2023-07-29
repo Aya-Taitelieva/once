@@ -1,22 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Avatar, IconButton } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import CardActions from "@mui/material/CardActions";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useAuthContext } from "../contexts/AuthContext";
 import { useCommentContext } from "../contexts/CommentContext";
 
-const Comment = ({ item, commentUser, setShowComments }) => {
+const Comment = ({ item, commentUser, podId }) => {
   const { user, isAdmin } = useAuthContext();
-  const { deleteComment } = useCommentContext();
+  const { deleteComment, likeComment } = useCommentContext();
+  const [likeCount, setLikeCount] = useState(item.likes.length);
+  const [isActive, setIsActive] = useState(false);
   function handleDelete() {
-    deleteComment(item.id);
-    setShowComments(false);
+    deleteComment(item.id, podId);
   }
+  function handleLike() {
+    if (!user) {
+      return;
+    }
+    likeComment(item.id, user.email, podId);
+    console.log(item.likes);
+  }
+  useEffect(() => {
+    if (user) {
+      if (item.likes.includes(user.email)) {
+        setIsActive(true);
+        setLikeCount(item.likes.length);
+      } else {
+        setIsActive(false);
+        setLikeCount(item.likes.length);
+      }
+    } else {
+      setIsActive(false)
+    }
+  }, [likeCount, item]);
+
   return (
     <Grid item xs={12} md={12} lg={12}>
       <Card sx={{ margin: "0 auto" }}>
@@ -54,19 +76,30 @@ const Comment = ({ item, commentUser, setShowComments }) => {
             {item.comment}
           </Typography>
 
-          {user && (isAdmin(user) || user.email === commentUser.email) && (
-            <CardActions
-              sx={{
-                display: "flex",
-                justifyContent: "end",
-                marginLeft: "1.5rem",
-              }}
-            >
+          <CardActions
+            sx={{
+              display: "flex",
+              justifyContent: "end",
+              marginLeft: "1.5rem",
+            }}
+          >
+            {user && (isAdmin(user) || user.email === commentUser.email) && (
               <IconButton onClick={handleDelete}>
                 <DeleteOutlineIcon />
               </IconButton>
-            </CardActions>
-          )}
+            )}
+            <div>
+              <IconButton
+                color={isActive ? "primary" : "default"}
+                onClick={handleLike}
+              >
+                <ThumbUpIcon />
+              </IconButton>
+              <Typography variant="body1" component="span">
+                {likeCount}
+              </Typography>
+            </div>
+          </CardActions>
         </CardContent>
       </Card>
     </Grid>

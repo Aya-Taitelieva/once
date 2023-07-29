@@ -3,13 +3,13 @@ import { CircularProgress, Container, Grid, Typography } from "@mui/material";
 import { useCommentContext } from "../contexts/CommentContext";
 import Comment from "./Comment";
 const CommentList = ({ pod,id , showComments, setShowComments }) => {
-  const { comments, filterComments } = useCommentContext();
+  const { comments, getComments } = useCommentContext();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        filterComments("podId", id);
+        getComments("podId", id);
         setTimeout(() => {
           setLoading(false);
         }, 800);
@@ -40,6 +40,7 @@ const CommentList = ({ pod,id , showComments, setShowComments }) => {
               <Comment
                 item={item}
                 key={item.id}
+                podId={id}
                 commentUser={item.user}
                 setShowComments={setShowComments}
               />
