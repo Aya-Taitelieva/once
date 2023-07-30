@@ -6,7 +6,6 @@ const ProtectedRoute = () => {
 	const { user } = useAuthContext();
 
 	if (!user) {
-		alert("Please login to access this page", "default");
 		return <Navigate to="/auth" />;
 	}
 

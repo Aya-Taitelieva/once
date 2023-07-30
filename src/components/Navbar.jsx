@@ -61,6 +61,7 @@ export default function Navbar() {
     try {
       handleMenuClose();
       await logout();
+      navigate("/products")
     } catch (e) {
       handleMenuClose();
       console.log("Logout error:", e);

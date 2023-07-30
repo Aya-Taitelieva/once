@@ -39,8 +39,8 @@ const MainRoutes = () => {
           <Route path="/add" element={<AddPodsPage />} />
           <Route path="/edit/:id" element={<EditPodsPage />} />
         </Route>
+        <Route path="/auth" element={<AuthPage />} />
       </Route>
-      <Route path="/auth" element={<AuthPage />} />
     </Routes>
   );
 };
