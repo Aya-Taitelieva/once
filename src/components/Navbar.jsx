@@ -66,6 +66,10 @@ export default function Navbar() {
       console.log("Logout error:", e);
     }
   };
+  const handleProfileLink = () => {
+    handleMenuClose();
+    navigate('/profile')
+  }
   const handleSignIn = () => {
     handleMenuClose();
     navigate("/auth");
@@ -86,13 +90,13 @@ export default function Navbar() {
       }}
       open={isMenuOpen}
       onClose={handleMenuClose}>
-      <MenuItem onClick={handleMenuClose}>
+      <MenuItem onClick={handleProfileLink}>
         <Avatar src={user.photoURL} alt={user.displayName} />
         <Typography variant="body1" style={{ marginLeft: "8px" }}>
           {user.displayName}
         </Typography>
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>Comments</MenuItem>
+      <MenuItem onClick={handleProfileLink}>Comments</MenuItem>
       <MenuItem onClick={handleLogout}>Log out</MenuItem>
     </Menu>
   ) : (
@@ -158,7 +162,7 @@ export default function Navbar() {
           color="inherit">
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+        <p onClick={() => navigate("/profile")}>Profile</p>
       </MenuItem>
     </Menu>
   );

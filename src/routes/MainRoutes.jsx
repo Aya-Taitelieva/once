@@ -16,6 +16,7 @@ import DetailsPage from "../pages/DetailsPage";
 import CartPage from "../pages/CartPage";
 
 import VerificationPage from "../pages/VerificationPage";
+import ProfilePage from "../pages/ProfilePage";
 const MainRoutes = () => {
   return (
     <Routes>
@@ -30,6 +31,7 @@ const MainRoutes = () => {
         <Route path="/favorite" element={<Favorites />} />
         <Route path="/details/:id" element={<DetailsPage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/profile" element={<ProfilePage />}/>
         <Route element={<AdminRoute />}>
           <Route path="/add" element={<AddPodsPage />} />
           <Route path="/edit/:id" element={<EditPodsPage />} />
