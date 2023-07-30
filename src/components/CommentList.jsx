@@ -42,7 +42,6 @@ const CommentList = ({ pod,id , showComments, setShowComments }) => {
                 key={item.id}
                 podId={id}
                 commentUser={item.user}
-                setShowComments={setShowComments}
               />
             );
           })
