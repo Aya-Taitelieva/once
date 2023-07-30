@@ -9,18 +9,28 @@ import CardActions from "@mui/material/CardActions";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useAuthContext } from "../contexts/AuthContext";
 import { useCommentContext } from "../contexts/CommentContext";
+import { useNavigate } from "react-router-dom";
 
-const Comment = ({ item, commentUser, podId }) => {
+const Comment = ({ item, commentUser, podId, inProfile }) => {
   const { user, isAdmin } = useAuthContext();
   const { deleteComment, likeComment } = useCommentContext();
+  const navigate = useNavigate()
   const [likeCount, setLikeCount] = useState(item.likes.length);
   const [isActive, setIsActive] = useState(false);
   function handleDelete() {
+    if(inProfile) {
+      navigate(`/details/${podId}`)
+      return
+    }
     deleteComment(item.id, podId);
   }
   function handleLike() {
     if (!user) {
       return;
+    }
+    if(inProfile) {
+      navigate(`/details/${podId}`)
+      return
     }
     likeComment(item.id, user.email, podId);
     console.log(item.likes);

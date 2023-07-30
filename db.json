@@ -227,7 +227,8 @@
       },
       "podId": 2,
       "likes": [
-        "nurtay@gmail.com"
+        "nurtay@gmail.com",
+        "admin@gmail.com"
       ],
       "id": 1
     },
@@ -239,7 +240,9 @@
         "photoURL": null
       },
       "podId": 2,
-      "likes": [],
+      "likes": [
+        "admin@gmail.com"
+      ],
       "id": 2
     },
     {
@@ -277,6 +280,30 @@
       "podId": 3,
       "likes": [],
       "id": 5
+    },
+    {
+      "comment": "waka",
+      "user": {
+        "email": "nurtay@gmail.com",
+        "displayName": "nurtay",
+        "photoURL": "https://images.unsplash.com/photo-1439792675105-701e6a4ab6f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80"
+      },
+      "podId": 3,
+      "likes": [],
+      "id": 6
+    },
+    {
+      "comment": "hh",
+      "user": {
+        "email": "com@gmail.com",
+        "displayName": "comment",
+        "photoURL": "123123"
+      },
+      "podId": 6,
+      "likes": [
+        "com@gmail.com"
+      ],
+      "id": 7
     }
   ]
 }
