@@ -7,7 +7,7 @@ function ElfPage() {
   return (
     <div>
       <div>
-        <h2 style={{ textAlign: "center" }}>
+        <h2 className="warning-h2" style={{ textAlign: "center" }}>
           WARNING: This product contains nicotine. Nicotine is an addictive
           chemical.
         </h2>
@@ -19,10 +19,12 @@ function ElfPage() {
             src="https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/floor1_bg1.jpg"
           />
           <Carousel.Caption>
-            <h4 style={{ fontSize: "50px", fontWeight: "bold" }}>
+            <h4
+              className="elf-h4"
+              style={{ fontSize: "50px", fontWeight: "bold" }}>
               Daily Oasis in Your Palm
             </h4>
-            <p style={{ fontSize: "20px" }}>
+            <p className="elf-p" style={{ fontSize: "20px" }}>
               When you're riding high, you'll naturally gravitate toward bold
               looks.
             </p>
@@ -34,10 +36,12 @@ function ElfPage() {
             src="https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/floor1_bg2.jpg"
           />
           <Carousel.Caption>
-            <h4 style={{ fontSize: "50px", fontWeight: "bold" }}>
+            <h4
+              className="elf-h4"
+              style={{ fontSize: "50px", fontWeight: "bold" }}>
               Daily Oasis in Your Palm
             </h4>
-            <p style={{ fontSize: "20px" }}>
+            <p className="elf-p" style={{ fontSize: "20px" }}>
               Just ease up on yourself and you might light on some unexpected
               inspirations.
             </p>
@@ -49,10 +53,12 @@ function ElfPage() {
             src="https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/floor1_bg3.jpg"
           />
           <Carousel.Caption>
-            <h4 style={{ fontSize: "50px", fontWeight: "bold" }}>
+            <h4
+              className="elf-h4"
+              style={{ fontSize: "50px", fontWeight: "bold" }}>
               Daily Oasis in Your Palm
             </h4>
-            <p style={{ fontSize: "20px" }}>
+            <p className="elf-p" style={{ fontSize: "20px" }}>
               When you feel empowered, you tend to take on something
               adventurous.
             </p>
@@ -60,13 +66,13 @@ function ElfPage() {
         </Carousel.Item>
       </Carousel>
       <div
+        className="elf-div"
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-        }}
-      >
-        <div style={{ width: "500px", margin: "50px" }}>
+        }}>
+        <div className="elf-div2" style={{ width: "500px", margin: "50px" }}>
           <h3>Always Vape Worry-Free</h3>
           <span style={{ width: "150px" }}>
             No more unexpected depletion, 2 LED lights tell you when to recharge
@@ -77,8 +83,7 @@ function ElfPage() {
               display: "flex",
               margin: "30px",
               gap: "50px",
-            }}
-          >
+            }}>
             <ul>
               E-liquid
               <li style={{ color: "green" }}>100%-50%</li>
@@ -94,23 +99,24 @@ function ElfPage() {
           </div>
         </div>
         <img
+          className="img-elf"
           style={{ width: "50%", margin: "50px 10px" }}
           src="https://dbh4s5ja0maaw.cloudfront.net/products/pi7000/floor2_bg.jpg"
         />
       </div>
       <div style={{ position: "relative" }}>
         <Button
+          className="elf-btn"
           sx={{
             position: "absolute",
-            left: "550px",
+            left: "5%",
             top: "90px",
             color: "white",
           }}
           onClick={() => navigate("/products")}
           variant="outlined"
           size="large"
-          color="error"
-        >
+          color="error">
           GO to Shop!
         </Button>
         <img
