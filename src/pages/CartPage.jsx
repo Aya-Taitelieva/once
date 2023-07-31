@@ -104,7 +104,7 @@ export default function CartPage() {
         <Button
           sx={{ background: "black" }}
           component={Link}
-          to="/success"
+          to="/payment"
           variant="contained"
         >
           Order
