@@ -7,7 +7,7 @@ const OxPage = () => {
   return (
     <div>
       <div>
-        <h2 style={{ textAlign: "center" }}>
+        <h2 className="warning-h2" style={{ textAlign: "center" }}>
           WARNING: This product contains nicotine. Nicotine is an addictive
           chemical.
         </h2>
@@ -56,6 +56,7 @@ const OxPage = () => {
           src="https://www.oxbar.com/cdn/shop/files/OXBAR_-G4000_-2023_05.png?v=1685668201"
         />
         <div
+          className="ox-div3"
           style={{
             position: "absolute",
             bottom: "300px",
@@ -79,6 +80,7 @@ const OxPage = () => {
           src="https://www.oxbar.com/cdn/shop/files/OXBAR_-G4000_-2023_06.png?v=1685669585"
         />
         <div
+          className="ox-div4"
           style={{
             position: "absolute",
             bottom: "800px",
@@ -99,6 +101,7 @@ const OxPage = () => {
             src="https://cdn.shopify.com/s/files/1/0584/6709/0582/files/OXBAR_-G4000_-2023_09.png?v=1685672997"
           />
           <div
+            className="ox-div5"
             style={{
               position: "absolute",
               bottom: "400px",
@@ -114,6 +117,7 @@ const OxPage = () => {
             </span>
           </div>
           <Button
+            className="elf-btn"
             onClick={() => navigate("/products")}
             variant="outlined"
             size="large"

@@ -26,7 +26,7 @@ export default function Filter() {
       setSearchParams({
         _limit: LIMIT,
         _page: _page || 1,
-        _q: q || "",
+        q: q || "",
       });
     } else {
       setSearchParams({
@@ -44,8 +44,7 @@ export default function Filter() {
         value={title}
         exclusive
         onChange={handleChange}
-        aria-label="Platform"
-      >
+        aria-label="Platform">
         <ToggleButton value="all">All</ToggleButton>
         <ToggleButton value="WAKA">WAKA</ToggleButton>
         <ToggleButton value="Elf Bar">Elf Bar</ToggleButton>

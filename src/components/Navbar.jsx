@@ -61,7 +61,7 @@ export default function Navbar() {
     try {
       handleMenuClose();
       await logout();
-      navigate("/products")
+      navigate("/products");
     } catch (e) {
       handleMenuClose();
       console.log("Logout error:", e);
@@ -69,8 +69,8 @@ export default function Navbar() {
   };
   const handleProfileLink = () => {
     handleMenuClose();
-    navigate('/profile')
-  }
+    navigate("/profile");
+  };
   const handleSignIn = () => {
     handleMenuClose();
     navigate("/auth");
@@ -135,36 +135,14 @@ export default function Navbar() {
       }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}>
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+      {/* <MenuItem onClick={handleProfileLink}>
+        <Avatar src={user.photoURL} alt={user.displayName} />
+        <Typography variant="body1" style={{ marginLeft: "8px" }}>
+          {user.displayName}
+        </Typography>
       </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit">
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit">
-          <AccountCircle />
-        </IconButton>
-        <p onClick={() => navigate("/profile")}>Profile</p>
-      </MenuItem>
+      <MenuItem onClick={handleProfileLink}>Comments</MenuItem>
+      <MenuItem onClick={handleLogout}>Log out</MenuItem> */}
     </Menu>
   );
   return (
