@@ -20,7 +20,6 @@ code {
   flex-wrap: wrap;
 }
 
-
 .StripeElement {
   max-width: 100%;
 }
@@ -67,7 +66,7 @@ code {
   margin: 10px auto 0px;
   padding: 15px 20px 15px;
   border-bottom: 5px solid #f96700;
-=======
+}
 .btnV {
   background: #fff;
   border: none;

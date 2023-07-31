@@ -319,6 +319,67 @@
         "nurtay@gmail.com"
       ],
       "id": 8
+    },
+    {
+      "comment": "goood podik",
+      "user": {
+        "email": "becausemirbek@gmail.com",
+        "displayName": "said",
+        "photoURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KUmt5ylALrfw7ecCY3LmHarOsUDTms1NuLUgRjKH&s"
+      },
+      "podId": 2,
+      "likes": [],
+      "id": 9
+    },
+    {
+      "comment": "iiuuuuu ",
+      "user": {
+        "email": "becausemirbek@gmail.com",
+        "displayName": "said",
+        "photoURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KUmt5ylALrfw7ecCY3LmHarOsUDTms1NuLUgRjKH&s"
+      },
+      "podId": 2,
+      "likes": [],
+      "id": 10
+    },
+    {
+      "comment": "полная фигня",
+      "user": {
+        "email": "becausemirbek@gmail.com",
+        "displayName": "said",
+        "photoURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KUmt5ylALrfw7ecCY3LmHarOsUDTms1NuLUgRjKH&s"
+      },
+      "podId": 1,
+      "likes": [
+        "becausemirbek@gmail.com"
+      ],
+      "id": 11
+    },
+    {
+      "comment": "не курите вредно ",
+      "user": {
+        "email": "becausemirbek@gmail.com",
+        "displayName": "said",
+        "photoURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KUmt5ylALrfw7ecCY3LmHarOsUDTms1NuLUgRjKH&s"
+      },
+      "podId": 1,
+      "likes": [
+        "becausemirbek@gmail.com"
+      ],
+      "id": 12
+    },
+    {
+      "comment": "спортом занимайтесь черти ",
+      "user": {
+        "email": "becausemirbek@gmail.com",
+        "displayName": "said",
+        "photoURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KUmt5ylALrfw7ecCY3LmHarOsUDTms1NuLUgRjKH&s"
+      },
+      "podId": 1,
+      "likes": [
+        "becausemirbek@gmail.com"
+      ],
+      "id": 13
     }
   ]
 }
