@@ -15,9 +15,14 @@ import AdminRoute from "./AdminRoute";
 import DetailsPage from "../pages/DetailsPage";
 import CartPage from "../pages/CartPage";
 
+import Payment from "../pages/Payment/Payment";
+import SuccessPage from "../pages/Payment/SuccessPage";
+
+
 import VerificationPage from "../pages/VerificationPage";
 import ProfilePage from "../pages/ProfilePage";
 import ProtectedRoute from "./ProtectedRoute";
+
 const MainRoutes = () => {
   return (
     <Routes>
@@ -30,11 +35,19 @@ const MainRoutes = () => {
         <Route path="/elf" element={<ElfPage />} />
         <Route path="/waka" element={<WakaPage />} />
         <Route path="/details/:id" element={<DetailsPage />} />
+
+
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/success" element={<SuccessPage />} />
+
+        <Route path="/cart" element={<CartPage />} />
+
         <Route element={<ProtectedRoute />}>
           <Route path="/cart" element={<CartPage />} />
           <Route path="/favorite" element={<Favorites />} />
           <Route path="/profile" element={<ProfilePage />} />
         </Route>
+
         <Route element={<AdminRoute />}>
           <Route path="/add" element={<AddPodsPage />} />
           <Route path="/edit/:id" element={<EditPodsPage />} />
