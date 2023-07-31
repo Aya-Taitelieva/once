@@ -14,12 +14,12 @@ const VerificationPage = () => {
           verified at checkout.
         </h4>
       </div>
-      <button onClick={() => navigate("/")} className="btnV">
+      <a href="https://www.google.ru/" className="btnV">
         <span className="spanV">NO</span>
-      </button>
-      <button onClick={() => navigate("/home")} className="btnV">
+      </a>
+      <a onClick={() => navigate("/home")} className="btnV">
         <span className="spanV">YES</span>
-      </button>
+      </a>
     </div>
   );
 };
