@@ -22,7 +22,7 @@ import { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 const pages = [
-  { title: "Home", link: "/" },
+  { title: "Home", link: "/home" },
   {
     title: "Products",
     link: "/products",
@@ -61,11 +61,16 @@ export default function Navbar() {
     try {
       handleMenuClose();
       await logout();
+      navigate("/products")
     } catch (e) {
       handleMenuClose();
       console.log("Logout error:", e);
     }
   };
+  const handleProfileLink = () => {
+    handleMenuClose();
+    navigate('/profile')
+  }
   const handleSignIn = () => {
     handleMenuClose();
     navigate("/auth");
@@ -85,15 +90,14 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>
+      onClose={handleMenuClose}>
+      <MenuItem onClick={handleProfileLink}>
         <Avatar src={user.photoURL} alt={user.displayName} />
         <Typography variant="body1" style={{ marginLeft: "8px" }}>
           {user.displayName}
         </Typography>
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>Comments</MenuItem>
+      <MenuItem onClick={handleProfileLink}>Comments</MenuItem>
       <MenuItem onClick={handleLogout}>Log out</MenuItem>
     </Menu>
   ) : (
@@ -110,8 +114,7 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
+      onClose={handleMenuClose}>
       <MenuItem onClick={handleSignIn}>Sign in</MenuItem>
     </Menu>
   );
@@ -131,8 +134,7 @@ export default function Navbar() {
         horizontal: "right",
       }}
       open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
+      onClose={handleMobileMenuClose}>
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
@@ -145,8 +147,7 @@ export default function Navbar() {
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
-          color="inherit"
-        >
+          color="inherit">
           <Badge badgeContent={17} color="error">
             <NotificationsIcon />
           </Badge>
@@ -159,11 +160,10 @@ export default function Navbar() {
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="inherit"
-        >
+          color="inherit">
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+        <p onClick={() => navigate("/profile")}>Profile</p>
       </MenuItem>
     </Menu>
   );
@@ -176,8 +176,7 @@ export default function Navbar() {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 1 }}
-          >
+            sx={{ mr: 1 }}>
             <FlutterDashIcon onClick={handleShow} />
             <Offcanvas show={show} onHide={handleClose}>
               <Offcanvas.Header closeButton>
@@ -194,8 +193,7 @@ export default function Navbar() {
                     display: "flex",
                     flexDirection: "column",
                     marginTop: "80%",
-                  }}
-                >
+                  }}>
                   <h6 onClick={() => navigate("/favorite")}>Favorites</h6>
                   <h6 onClick={() => navigate("/add")}>New Products</h6>
                 </div>
@@ -206,8 +204,7 @@ export default function Navbar() {
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
+            sx={{ display: { xs: "none", sm: "block" } }}>
             ONCE
           </Typography>
           <Box sx={{ display: "flex" }}>
@@ -216,8 +213,7 @@ export default function Navbar() {
                 component={NavLink}
                 to={page.link}
                 sx={{ my: "2", color: "white" }}
-                key={page.title}
-              >
+                key={page.title}>
                 {page.title}
               </Button>
             ))}
@@ -228,8 +224,7 @@ export default function Navbar() {
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
-              color="inherit"
-            >
+              color="inherit">
               <LocalMallIcon onClick={() => navigate("/cart")} />
             </IconButton>
             <IconButton
@@ -239,8 +234,7 @@ export default function Navbar() {
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
+              color="inherit">
               <AccountCircle />
             </IconButton>
           </Box>
@@ -251,8 +245,7 @@ export default function Navbar() {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
+              color="inherit">
               <MoreIcon />
             </IconButton>
           </Box>

@@ -3,8 +3,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -50,8 +48,7 @@ export default function AuthPage() {
     password: "",
   });
 
-  const { user, register, login, error, setError, clearError } =
-    useAuthContext();
+  const { user, register, login, error, clearError } = useAuthContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -63,7 +60,7 @@ export default function AuthPage() {
   };
 
   if (user) {
-    return <Navigate to="/products" />;
+    return <Navigate to="/profile" />;
   }
 
   return (
@@ -195,7 +192,11 @@ export default function AuthPage() {
           onClose={clearError}
           anchorOrigin={{ vertical: "top", horizontal: "center" }}
         >
-          <Alert onClose={clearError} severity="error" sx={{ width: "33vw", fontSize:'1.5rem'}}>
+          <Alert
+            onClose={clearError}
+            severity="error"
+            sx={{ width: "33vw", fontSize: "1.5rem" }}
+          >
             {error}
           </Alert>
         </Snackbar>
