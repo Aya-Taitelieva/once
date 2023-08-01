@@ -83,6 +83,9 @@ const MainContext = ({ children }) => {
       await axios.delete(`${API}/${id}`);
       getPods();
     } catch (e) {
+      if (e.response.status === 500) {
+        getPods();
+      }
       console.log(e);
     }
   }
